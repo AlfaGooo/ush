@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_delete_tnode_1ch(t_tnode **root, void *data,
+void mx_delete_tnodeb(t_tnode **root, void *data,
                              int (*cmp)(void*, void*),
                              void (*free_tnode)(t_tnode *tnode)) {
     t_tnode *del_node = 0;
@@ -20,16 +20,16 @@ void mx_delete_tnode_1ch(t_tnode **root, void *data,
         }
     }
     else if (cmp((*root)->data, data) > 0)
-        mx_delete_tnode_1ch(&((*root)->left), data, cmp, free_tnode);
+        mx_delete_tnodeb(&((*root)->left), data, cmp, free_tnode);
     else
-        mx_delete_tnode_1ch(&((*root)->right), data, cmp, free_tnode);
+        mx_delete_tnodeb(&((*root)->right), data, cmp, free_tnode);
 }
 
-void mx_delete_tnode_2ch(t_tnode **root, int (*cmp)(void*, void*),
+void mx_delete_tnodea(t_tnode **root, int (*cmp)(void*, void*),
                              t_tnode *finded,
                              void (*free_tnode)(t_tnode *tnode)) {
     t_tnode *min = mx_take_min_tree_node(finded->right);
 
-    mx_clear_tree_node(root, min->data, cmp, free_tnode);
+    mx_del_node(root, min->data, cmp, free_tnode);
     finded->data = min->data;
 }

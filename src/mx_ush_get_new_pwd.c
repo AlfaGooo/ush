@@ -9,7 +9,7 @@ char *mx_ush_get_new_pwd(char *path, t_info *info) {
         if (mx_strcmp(tokens[i], "..") == 0) {
             if (mx_ush_get_rank(tmp_pwd) == 0)
                 continue;
-            tmp_pwd = mx_dell_back_rank(tmp_pwd);
+            tmp_pwd = mx_del_rlevel(tmp_pwd);
         }
         else 
             tmp_pwd = mx_ush_add_rank(tmp_pwd, tokens[i]);

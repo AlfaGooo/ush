@@ -10,13 +10,13 @@ static int flang_string(char *str, int *position, int end, int flag) {
     return flag;
 }
 
-int mx_corect_end_of_flag(char *str, int *position, int end, int flag) {
+int mx_ex_with_flag(char *str, int *position, int end, int flag) {
     int check_flag = 0;
 
     if (flag == 39)
         check_flag = flang_string(str, position, end, flag);
     else
-        check_flag = mx_flang_comand(str, position, end, flag);
+        check_flag = mx_command_flag(str, position, end, flag);
     (*position)++;
     return check_flag;
 }

@@ -1,6 +1,6 @@
 #include "ush.h"
 
-char *mx_get_path_for_env(char *str1, char *str2, int *i) {
+char *mx_env_getp(char *str1, char *str2, int *i) {
     char *result = NULL;
 
     str1++;

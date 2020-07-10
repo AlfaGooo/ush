@@ -26,7 +26,7 @@ static int print_echo_e(char *str) {
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] == '\\' 
             && mx_ush_regular(str + i + 1, "^(x[0-9a-fA-F]{2}.*)|(0[0-7]{2,3}.*)$")) {
-            buf = mx_echo_espections(str, &i);
+            buf = mx_echo_so(str, &i);
         }
         else if(str[i] == '\\' && str[i + 1] == '\\')
             buf = '\\';

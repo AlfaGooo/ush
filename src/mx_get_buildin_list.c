@@ -19,7 +19,7 @@ static void buildin_list_2(t_token *token, t_info *info) {
     else if (mx_strcmp(token->value[0], "unset") == 0)
         mx_ush_unset(token->value, &(info->var_tree), info);
     else if (mx_strcmp(token->value[0], "stop") == 0)
-        mx_finish_proceses(info);
+        mx_finalpr(info);
     else if (mx_strcmp(token->value[0], "env") == 0)
         mx_ush_env(token->value, info);
     else if (mx_strcmp(token->value[0], "which") == 0)

@@ -29,17 +29,17 @@ static int new_spec_symbol(char *str, int *pos, int end, int flag) {
 
     if (if_symbol(str[pos[0]]) && mx_is_symbol_in_position(str, pos[0], str[pos[0]])) {
         pos[0]++;
-        new_flag = mx_corect_end_of_flag(str, pos, end, new_flag);
+        new_flag = mx_ex_with_flag(str, pos, end, new_flag);
     } 
     else if (pos[0] > 0 && str[*pos] == 40 
              && mx_is_symbol_in_position(str, pos[0] - 1, '$')) {
         pos[0]++;
-        new_flag = mx_corect_end_of_flag(str, pos, end, ')');
+        new_flag = mx_ex_with_flag(str, pos, end, ')');
     }
     return new_flag;
 }
 
-int mx_flang_comand(char *str, int *pos, int end, int flag) {
+int mx_command_flag(char *str, int *pos, int end, int flag) {
     int check_flag = flag;
 
     while (pos[0] <= end) {

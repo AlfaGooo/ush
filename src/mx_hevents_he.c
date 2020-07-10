@@ -1,6 +1,6 @@
 #include "ush.h"
 
-int mx_handle_events(char ch) {
+int mx_hevents_he(char ch) {
     if (ch == KEY_ENTER) {
         return KEY_ENTER;
     }

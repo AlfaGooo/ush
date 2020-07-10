@@ -52,7 +52,7 @@ static int start_child(char *path, char **argv, char **env) {
     return 0;
 }
 
-void mx_get_env_proceses(char *path, char **argv, char **env, t_info *info) {
+void mx_get_envpr(char *path, char **argv, char **env, t_info *info) {
     pid_t pid = fork();
 
     if (pid == 0) {

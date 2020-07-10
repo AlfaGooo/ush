@@ -8,7 +8,7 @@ static void check_status(char **argv, int status, t_info *info, pid_t pr) {
         if (MX_WTERMSIG(status) == SIGSEGV)
             mx_segfault_error();
         if (MX_WTERMSIG(status) == SIGINT) {
-            mx_delete_process_by_pid(info, pr);
+            mx_del_leaks_pid(info, pr);
             info->last_status = 130;
         }
     }
@@ -28,7 +28,7 @@ void mx_sleeped_process(t_info *info, char **argv) {
         check_status(argv, status, info, pr);
     }
     else {
-        mx_delete_process_by_pid(info, pr);
+        mx_del_leaks_pid(info, pr);
         info->last_status = MX_EXSTATUS(status);
     }
 }

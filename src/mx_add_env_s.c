@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_add_env(t_list **var_tree, char *name, char *value, char *mem) {
+void mx_add_env_s(t_list **var_tree, char *name, char *value, char *mem) {
     t_variable *var = (t_variable*) malloc(sizeof(t_variable));
 
     var->value = value;

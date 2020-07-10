@@ -1,6 +1,6 @@
 #include "ush.h"
 
-char* mx_dell_back_rank(char *path) {
+char* mx_del_rlevel(char *path) {
     char *new_path = 0;
     int len = mx_strlen(path);
     int i = len;

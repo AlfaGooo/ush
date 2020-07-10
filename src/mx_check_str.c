@@ -63,7 +63,7 @@ static void spec_symbol(t_info *processes, int *i, char **new_str) {
         pos++;
         flag = ')';
     }
-    mx_corect_end_of_flag(new_str[0], &pos, strlen(new_str[0]), flag);
+    mx_ex_with_flag(new_str[0], &pos, strlen(new_str[0]), flag);
     comand = mx_strndup(&new_str[0][i[0]], pos - i[0]);
     editor_str(&comand, processes);
     mx_replace(new_str, i[0], pos, comand);
@@ -89,7 +89,7 @@ char *mx_check_str(char *str, t_info *info, bool dqute) {
         else if (chek_comand(new_str, i))
             spec_symbol(info, &i, &new_str);
         else if (mx_is_symbol_in_position(new_str, i ,'$'))
-            mx_characteristic_shell(info, &i, &new_str);
+            mx_info_sh(info, &i, &new_str);
         else if (new_str[i] == '\\'
                  && (!dqute || (dqute && (new_str[i + 1] == '\\'))))
             mx_replace(&new_str, i, i + 1, 0);

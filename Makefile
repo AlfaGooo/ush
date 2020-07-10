@@ -7,11 +7,11 @@ LBMXD = libmx
 
 LMBX = libmx.a
 INC = ush.h
-SRC = mx_add_env.c \
-	mx_arr1_add_to_arr2.c \
+SRC = mx_add_env_s.c \
+	mx_plus_arr.c \
 	mx_cd_flag_l.c \
 	mx_cd_flag_p.c \
-	mx_characteristic_shell.c \
+	mx_info_sh.c \
 	mx_check_ascii.c \
 	mx_check_buildin.c \
 	mx_check_char.c \
@@ -22,40 +22,43 @@ SRC = mx_add_env.c \
 	mx_check_pipe.c \
 	mx_check_str.c \
 	mx_check_tokens.c \
-	mx_clear_tree_node.c \
-	mx_cont_out.c \
-	mx_corect_end_of_flag.c \
+	mx_create_mem.c \
+	mx_del_node.c \
+	mx_out_ni.c \
+	mx_ex_with_flag.c \
 	mx_create_tree.c \
-	mx_del_no_child.c \
+	mx_del_if_noch.c \
 	mx_del_param.c \
-	mx_delete_last_process.c \
-	mx_delete_process_by_pid.c \
-	mx_dell_back_rank.c \
-	mx_dell_tnode.c \
-	mx_dell_tokens.c \
-	mx_dell_tree.c \
-	mx_dell_var_for_env.c \
-	mx_echo_espections.c \
-	mx_entry_prog.c \
+	mx_del_leaks.c \
+	mx_del_leaks_pid.c \
+	mx_del_rlevel.c \
+	mx_del_tnode.c \
+	mx_del_tokens.c \
+	mx_del_tree.c \
+	mx_del_env_v.c \
+	mx_echo_so.c \
+	mx_begin_sec.c \
 	mx_env_out.c\
-	mx_error_for_env.c \
+	mx_env_errors.c \
 	mx_exec.c \
-	mx_extra_symbol.c\
+	mx_exsymb.c\
 	mx_fill_tree.c \
 	mx_find_list.c \
-	mx_finish_proceses.c \
-	mx_flang_comand.c \
-	mx_free_path_for_env.c \
-	mx_generat_comands.c \
+	mx_finalpr.c \
+	mx_command_flag.c \
+	mx_env_pathf.c \
+	mx_gen_obj_com.c \
 	mx_get_buildin_list.c \
-	mx_get_env_proceses.c \
-	mx_get_path_for_env.c \
+	mx_get_envpr.c \
+	mx_env_getp.c \
 	mx_get_token.c \
 	mx_get_value.c \
-	mx_handle_events.c \
+	mx_hevents_he.c \
 	mx_input.c \
 	mx_input_status.c \
 	mx_insert_tree.c \
+	mx_isd_more.c \
+	mx_isd_op.c \
 	mx_is_param_new.c \
 	mx_is_symbol_in_position.c \
 	mx_last_status_param.c \
@@ -67,6 +70,7 @@ SRC = mx_add_env.c \
 	mx_monit_clear.c\
 	mx_new_tree_node.c \
 	mx_not_ascii.c \
+	mx_not_stdin_terminal.c \
 	mx_param_2x_tab.c \
 	mx_param_ush_end.c \
 	mx_pars_tab.c \
@@ -78,6 +82,7 @@ SRC = mx_add_env.c \
 	mx_segfault_error.c \
 	mx_select_tree_node.c \
 	mx_shell_param.c \
+	mx_shlvl_new.c \
 	mx_signal_r.c \
 	mx_signal_v_and_non_ascii.c \
 	mx_sleeped_process.c \

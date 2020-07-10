@@ -13,7 +13,7 @@ void mx_ush_parser(char *str, t_info *info) {
         mx_printerr("u$h: parse error near | \\ |\n");
         return;
     }
-    comands = mx_generat_comands(temp, end);
+    comands = mx_gen_obj_com(temp, end);
     mx_start(comands, info);
     mx_del_strarr(&comands);
 }

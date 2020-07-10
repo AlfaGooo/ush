@@ -10,7 +10,7 @@ static void all_false(t_var *var) {
 static bool get_path(char **path, int *i, char **argv) {
     if (*path)
         free(*path);
-    *path = mx_get_path_for_env(argv[*i], argv[*i + 1], i);
+    *path = mx_env_getp(argv[*i], argv[*i + 1], i);
     if (*path == NULL) {
         mx_print_error_for_env(argv[*i - 1], 0);
         return 1;
@@ -18,7 +18,7 @@ static bool get_path(char **path, int *i, char **argv) {
     return 0;
 }
 
-bool mx_error_for_env(char **argv, char **path, t_var *var, int *i) {
+bool mx_env_errors(char **argv, char **path, t_var *var, int *i) {
     if (strcmp(argv[*i], "=") == 0 && mx_print_error_for_env(NULL, 2))
         return 1;
     else if (mx_ush_regular(argv[*i], MX_REG_ERR)) {
@@ -30,7 +30,7 @@ bool mx_error_for_env(char **argv, char **path, t_var *var, int *i) {
             return 1;
     }
     else if (mx_ush_regular(argv[*i], MX_REG_U))
-        if (mx_dell_var_for_env(argv[*i], argv[*i + 1], var, i)) {
+        if (mx_del_env_v(argv[*i], argv[*i + 1], var, i)) {
             mx_print_error_for_env(argv[*i - 1], 0);
             return 1;
         }

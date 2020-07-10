@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_characteristic_shell(t_info *processes, int *i, char **new_str) {
+void mx_info_sh(t_info *processes, int *i, char **new_str) {
     int flag = mx_param_ush_end(*new_str, *i);
     char *par_shell = 0;
 

@@ -19,9 +19,9 @@ bool mx_check_tokens(t_list *tokens) {
     if ((tokens == 0) || (mx_check_operator((t_token*)tmp->data)))
         return false;
     while(tmp->next) {
-        if (mx_is_double_op(tmp, &op))
+        if (mx_isd_op(tmp, &op))
             return false;
-        if (mx_is_double_more(tmp))
+        if (mx_isd_more(tmp))
             return false;
         if (mx_is_double_less(tmp))
             return false;

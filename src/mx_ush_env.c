@@ -58,16 +58,16 @@ void mx_ush_env(char **argv, t_info *info) {
     for (i = 1; argv[i] != NULL; i++) {
         if (mx_ush_regular(argv[i], MX_REG_VER) || mx_ush_regular(argv[i], MX_REG_PROG))
             break;
-        if (mx_error_for_env(argv, &path, var, &i)) {
-            mx_free_path_for_env(var, path);
+        if (mx_env_errors(argv, &path, var, &i)) {
+            mx_env_pathf(var, path);
             info->last_status = 1;
             return;
         }
     }
     if (print_env(var, argv, &i)) {
-        mx_free_path_for_env(var, path);
+        mx_env_pathf(var, path);
         return;
     }
-    mx_get_env_proceses(path, mx_make_arg_to_proc(argv, i), mx_make_vars_for_env(var), info);
-    mx_free_path_for_env(var, path);
+    mx_get_envpr(path, mx_make_arg_to_proc(argv, i), mx_make_vars_for_env(var), info);
+    mx_env_pathf(var, path);
 }

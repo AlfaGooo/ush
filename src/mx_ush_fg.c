@@ -53,7 +53,7 @@ static int fg_continue(char **argv, t_info *info) {
         info->exit_status = 1;
         return 1;
     }
-    mx_cont_out(pr->name, pr->index);
+    mx_out_ni(pr->name, pr->index);
     kill(pr->pid, SIGCONT);
     return 0;
 }
@@ -63,7 +63,7 @@ static void fg_wait(int status, pid_t ch_pr, t_info *info) {
         if (MX_WTERMSIG(status) == SIGSEGV)
             mx_segfault_error();
         else if (MX_WTERMSIG(status) == SIGINT) {
-            mx_delete_process_by_pid(info, ch_pr);
+            mx_del_leaks_pid(info, ch_pr);
             info->last_status = 130;
         }
         else {
@@ -83,7 +83,7 @@ void mx_ush_fg(char **argv, t_info *info) {
             if (!MX_WIFEXIT(status))
                 fg_wait(status, ch_pr, info);
             else {
-                mx_delete_process_by_pid(info, ch_pr);
+                mx_del_leaks_pid(info, ch_pr);
                 info->last_status = MX_EXSTATUS(status);
             }
         }

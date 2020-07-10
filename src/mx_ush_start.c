@@ -20,7 +20,7 @@ static char *get_pwd() {
         return cwd;
     if (mx_check_link(pwd)) {
         link_path = mx_get_link_path(pwd);
-        pwd = mx_dell_back_rank(pwd);
+        pwd = mx_del_rlevel(pwd);
         pwd = mx_strjoin3(mx_strjoin2(pwd, "/"), link_path);
         if (mx_strcmp(pwd, cwd) == 0) {
             free(cwd);
@@ -45,7 +45,7 @@ void mx_ush_start(t_info **info, char **env) {
     new_info->old_pwd = get_pwd();
     new_info->last_status = 0;
     (*info) = new_info;
-    mx_entry_prog(&(new_info->var_tree), env);
+    mx_begin_sec(&(new_info->var_tree), env);
     signal(SIGSEGV, mx_segfault_exit);
     signal(SIGINT, mx_signal_c);
     signal(SIGTSTP, mx_signal_z);

@@ -25,7 +25,7 @@ int mx_check_ascii(t_info *info, char *chars, unsigned int ch) {
     int spec_symbol = 3;
 
     if (ch < 32) {
-        mx_extra_symb(ch, info);
+        mx_exsymb(ch, info);
         if (MX_SYMBOL == -1 || MX_SYMBOL == 2 || MX_SYMBOL == 13)
             spec_symbol = ctrl_enter_d_c(info);
         else

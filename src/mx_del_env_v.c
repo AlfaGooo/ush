@@ -10,7 +10,7 @@ static void chenge_var(t_var *var, char *name) {
     }
 }
 
-int mx_dell_var_for_env(char *str1, char *str2, t_var *var, int *i) {  
+int mx_del_env_v(char *str1, char *str2, t_var *var, int *i) {  
     char *name = NULL;
 
     str1++;

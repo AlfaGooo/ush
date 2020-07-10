@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_free_path_for_env(t_var *var, char *path) {
+void mx_env_pathf(t_var *var, char *path) {
     t_var *tmp = NULL;
 
     if (path) {

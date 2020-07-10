@@ -20,7 +20,7 @@ static char *create_comand(char *str, int *position) {
     return comand;
 }
 
-char **mx_generat_comands(char *str, int end) {
+char **mx_gen_obj_com(char *str, int end) {
     int sum = sum_comands(str, end);
     char **comands = (char **) malloc (sizeof(char *) * (sum + 1));
     int position = 0;

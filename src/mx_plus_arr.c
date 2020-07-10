@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_arr1_add_to_arr2(char ***strs, char ***str) {
+void mx_plus_arr(char ***strs, char ***str) {
     int count = 0;
     int count2 = 0;
 

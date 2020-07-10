@@ -32,7 +32,7 @@ static void create_parameter(char *str, int *start, int end, t_info *processes) 
     char *temp = NULL;
 
     *start = ++pos;
-    mx_corect_end_of_flag(str, &pos, end, ' ');
+    mx_ex_with_flag(str, &pos, end, ' ');
     temp = mx_strndup(&str[*start], pos - *start);
     *start = pos;
     value = mx_check_str(temp, processes, 0);

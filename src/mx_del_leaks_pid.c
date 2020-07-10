@@ -1,12 +1,12 @@
 #include "ush.h"
 
-void mx_delete_process_by_pid(t_info *info, int pid) {
+void mx_del_leaks_pid(t_info *info, int pid) {
     t_list *tmp = info->processes;
     t_list *tmp2 = info->processes;
 
     if (info->processes) {
         if (((t_process*)tmp->data)->pid == pid) {
-            mx_delete_last_process(info);
+            mx_del_leaks(info);
             return;
         }
         while (tmp->next) {

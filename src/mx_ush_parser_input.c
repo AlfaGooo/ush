@@ -38,7 +38,7 @@ char *mx_ush_parser_input(char *str) {
 
     while (pos <= end) {
         if (flag != 0)
-            flag = mx_corect_end_of_flag(st, &pos, end, flag);
+            flag = mx_ex_with_flag(st, &pos, end, flag);
         if (pos < end)
             flag = check_spec_symbol(st, &pos, end, flag);
         pos++;

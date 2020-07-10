@@ -24,12 +24,12 @@ static void end_argv(int *curr_pos, int end, char *str) {
             && mx_is_symbol_in_position(str, *curr_pos, str[*curr_pos])) {
             pos = (*curr_pos);
             (*curr_pos)++;
-            mx_corect_end_of_flag(str, curr_pos, end, str[pos]);
+            mx_ex_with_flag(str, curr_pos, end, str[pos]);
         }
         else if(str[*curr_pos] == '$' && str[(*curr_pos) + 1] == '(') {
             pos = (*curr_pos);
             *curr_pos += 2;
-            mx_corect_end_of_flag(str, curr_pos, end, ')');
+            mx_ex_with_flag(str, curr_pos, end, ')');
         }
         else
             (*curr_pos)++;
@@ -42,7 +42,7 @@ static void push_argv_in_list(char **comand, t_token *new_token) {
     meny_comand = mx_strsplit(*comand, '\x0d');
     mx_strdel(comand);
     if (meny_comand) {
-        mx_arr1_add_to_arr2(&new_token->value, &meny_comand);
+        mx_plus_arr(&new_token->value, &meny_comand);
         new_token->type = 1;
         new_token->priority = 10;
     }

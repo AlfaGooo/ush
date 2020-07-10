@@ -5,7 +5,7 @@ void mx_shell_param(t_info *processes, int *i, char **new_str) {
     int flag = 0;
     char *par_shell = 0;
 
-    flag = mx_corect_end_of_flag(*new_str, &end, mx_strlen(*new_str), '}');
+    flag = mx_ex_with_flag(*new_str, &end, mx_strlen(*new_str), '}');
     if (flag != 0) {
         mx_strdel(new_str);
         *new_str = mx_strnew(0);

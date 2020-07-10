@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_finish_proceses(t_info *info) {
+void mx_finalpr(t_info *info) {
     t_list *tmp = info->processes;
 
     while (tmp) {

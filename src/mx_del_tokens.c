@@ -1,6 +1,6 @@
 #include "ush.h"
 
-void mx_dell_tokens(t_list **tokens) {
+void mx_del_tokens(t_list **tokens) {
     t_token *tok = 0;
 
     while (*tokens) {
